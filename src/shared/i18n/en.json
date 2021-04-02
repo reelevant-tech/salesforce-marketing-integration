@@ -1,0 +1,14 @@
+{
+    "blockList.heading": "your blocks",
+    "searchDomain.block": "block",
+    "searchDomain.campaign": "group",
+    "searchBar.placeholder": "search block",
+    "blockList.column.campaignName": "group",
+    "blockList.column.blockName": "name",
+    "blockList.emptyMessage": "No results",
+    "blockConfig.button.changeBlock": "Use another block",
+    "blockConfig.section.urlParameters": "URL Parameters",
+    "blockConfig.error.notEmpty": "could not be empty",
+    "blockConfig.section.addLink": "redirect at click",
+    "blockConfig.section.extraParameters": "extra redirect parameters"
+}

@@ -1,0 +1,11 @@
+{
+    "blockList.heading": "vos blocs",
+    "blockConfig.section.extraParameters": "autre paramètres de redirection",
+    "blockConfig.section.addLink": "rediriger au clic",
+    "blockConfig.error.notEmpty": "ne peut être vide",
+    "blockConfig.section.urlParameters": "Paramètres d'URL",
+    "blockConfig.button.changeBlock": "Changer de bloc",
+    "blockList.emptyMessage": "Pas de résultat",
+    "blockList.column.blockName": "nom",
+    "blockList.column.campaignName": "groupe"
+}
