@@ -30,12 +30,6 @@ const BlockListView: React.FC = () => {
         <Spinner />
       </div>
     )
-  } else {
-    // dont know why the spinner isn't removed so we are forced to clean it up manually
-    const spinner = document.querySelector(".slds-spinner_container")
-    if (spinner !== null) {
-      spinner.remove()
-    }
   }
 
   if (isInit === true && blockId !== undefined && blockChange === false) {
@@ -68,9 +62,9 @@ const BlockListView: React.FC = () => {
             <DataTableColumn
               width="50%"
               truncate
-              key="campaignName"
+              key="blockGroup"
               label={<FormattedMessage id="blockList.column.campaignName" />}
-              property="campaignName"
+              property="blockGroup.name"
             />
           </DataTable>
           <div style={{ textAlign: "center" }}>

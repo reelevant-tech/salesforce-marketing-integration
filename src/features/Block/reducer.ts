@@ -43,7 +43,7 @@ const reducer = (state = initialState, action: BlockActionTypes): BlockState => 
     case getType(getBlockListAsync.request):
       return set(state, _ => _.isLoading.list, true)
     case getType(getBlockListAsync.success):
-      return set(set(state, _ => _.isLoading.list, true), _ => _.list, action.payload)
+      return set(set(state, _ => _.isLoading.list, false), _ => _.list, action.payload)
     case getType(getBlockListAsync.failure):
       return set(state, _ => _.isLoading.list, false)
     case getType(getBlockAsync.request):
