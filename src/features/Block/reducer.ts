@@ -1,4 +1,3 @@
-import * as immutable from "object-path-immutable"
 import { getType } from "typesafe-actions"
 import {
   getBlockListAsync,
@@ -12,6 +11,7 @@ import {
   updateMetaDataParam
 } from "./actions"
 import { mergeMetas } from "./utils"
+import { set } from "monolite"
 
 import type { BlockState } from "./types"
 import type { BlockActionTypes } from "./actions"
@@ -29,32 +29,33 @@ const initialState: BlockState = {
 }
 
 const reducer = (state = initialState, action: BlockActionTypes): BlockState => {
+  console.log(state, action)
   switch (action.type) {
     case getType(getMetaDataAsync.success):
     case getType(setMetaDataAsync.success):
-      return immutable.wrap(state).set(["isInit"], true).set(["metadata"], action.payload).value()
+      return set(set(state, _ => _.isInit, true), _ => _.metadata, action.payload)
     case getType(mergeMetaData):
       const metadata = state.metadata ? mergeMetas(state.metadata, action.payload) : action.payload
-      return immutable.wrap(state).set(["isInit"], true).set(["metadata"], metadata).value()
+      return set(set(state, _ => _.isInit, true), _ => _.metadata, metadata)
     case getType(updateMetaDataParam):
       const { key, value } = action.payload
-      return immutable.set(state, ["metadata", "parameters", key], value)
+      return set(state, _ => _.metadata?.parameters![key], value)
     case getType(getBlockListAsync.request):
-      return immutable.set(state, ["isLoading", "list"], true)
+      return set(state, _ => _.isLoading.list, true)
     case getType(getBlockListAsync.success):
-      return immutable.wrap(state).set(["isLoading", "list"], false).set(["list"], action.payload).value()
+      return set(set(state, _ => _.isLoading.list, true), _ => _.list, action.payload)
     case getType(getBlockListAsync.failure):
-      return immutable.set(state, ["isLoading", "list"], false)
+      return set(state, _ => _.isLoading.list, false)
     case getType(getBlockAsync.request):
-      return immutable.set(state, ["isLoading", "block"], true)
+      return set(state, _ => _.isLoading.block, true)
     case getType(getBlockAsync.success):
-      return immutable.wrap(state).set(["isLoading", "block"], false).set(["block"], action.payload).value()
+      return set(set(state, _ => _.isLoading.block, false), _ => _.block, action.payload)
     case getType(changeBlockStart):
-      return immutable.set(state, ["changeBlock"], true)
+      return set(state, _ => _.changeBlock, true)
     case getType(changeBlockStop):
-      return immutable.set(state, ["changeBlock"], false)
+      return set(state, _ => _.changeBlock, false)
     case getType(updateUseLink):
-      return immutable.set(state, ["metadata", "useLink"], action.payload)
+      return set(state, _ => _.metadata?.useLink, action.payload)
     default:
       return state
   }
