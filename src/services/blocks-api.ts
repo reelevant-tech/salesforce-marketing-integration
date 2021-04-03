@@ -1,5 +1,5 @@
 import BlockSDK from "@rlvt/blocks-openapi-client"
-import createClient, {ClientType} from '@rlvt/openapi-client-utils'
+import { createClient, ClientType } from '@rlvt/openapi-client-utils'
 import { BlockWithGroup } from "../features/Block/types"
 
 const sdk = new BlockSDK(createClient({
