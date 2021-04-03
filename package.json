@@ -3,12 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "TZ=UTC react-scripts test -w 1 --env=jest-environment-jsdom-sixteen --verbose",
-    "lint": "eslint src --ext .ts,.tsx,.js,.jsx --max-warnings=0 --format=codeframe",
-    "pretest": "yarn lint",
-    "release": "release-it --disable-metrics"
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build --outDir build/"
   },
   "browserslist": {
     "production": [

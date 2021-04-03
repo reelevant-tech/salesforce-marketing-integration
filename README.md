@@ -1,4 +1,4 @@
-# Salesforce Marketing Cloud Integration [SMC]
+# Salesforce Marketing Cloud Integration [SMC] - Reelevant
 
 This project is a [Block Widget](https://developer.salesforce.com/docs/atlas.en-us.mc-app-development.meta/mc-app-development/content-sdk.htm) for SMC's Content Builder.
 
@@ -6,18 +6,23 @@ A Block Widget is a simple web-hosted application iframed inside Content Builder
 
 This app enable direct access to Reelevant's generated blocks inside SMC.
 
-## Design UX/UI
+## Usage
 
-Apart from shared components, this app conforms to **Ligthning Design Principles** from Salesforce. https://react.lightningdesignsystem.com/
+### Development
 
-### Notes
-- `jest-canvas-mock` have to be imported before testing (https://github.com/salesforce/design-system-react/issues/1717)
-- We have added a CSS rule to force `Salesforce Sans`
+The easiest way to debug this widget is to use the [blocktester](https://blocktester.herokuapp.com/) app ([docs](https://trailhead.salesforce.com/fr/content/learn/modules/content-builder-block-sdk/test-and-deploy-a-block?trail_id=develop-for-marketing-cloud)):
+- Run `yarn start`
+- Go to [blocktester](https://blocktester.herokuapp.com/) app
+- Enter `http://localhost:8083` as the widget URL
+- Click on a "block" zone at the right to load the widget.
+- The widget UI will appears on the left, right zones represent what will be rendered within SMC.
 
+## Notes
 
-## Links
+Apart from shared components, this app conforms to [**Ligthning Design Principles**](https://react.lightningdesignsystem.com/) from Salesforce. We have also added a CSS rule to force `Salesforce Sans`
+
+## Documentation links
 - https://www.salesforce.com/eu/products/marketing-cloud/platform/ 
-- [Movable Ink Integration on AppExchange](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000EuHRuUAN)
 - https://developer.salesforce.com/developer-centers/marketing-cloud/
 - [ISVforce guide](https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide)
 - [trailhead: Content Builder Block SDK](https://trailhead.salesforce.com/fr/content/learn/modules/content-builder-block-sdk?trail_id=develop-for-marketing-cloud)
