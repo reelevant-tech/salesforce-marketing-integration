@@ -8,6 +8,11 @@ This app enable direct access to Reelevant's generated blocks inside SMC.
 
 ## Usage
 
+### Production
+
+Since the current authentication system use a `cross_site` authentication (you need to log within `https://app.reelevant.com` to access blocks within the widget) and to avoid CSRF we whitelist with CORS the URL of where this widget is hosted, which is currently: `https://smc.reelevant.com`.
+If you want to host your own instance, you'll need to communicate URL of your instance so we can whitelist it.
+
 ### Development
 
 The easiest way to debug this widget is to use the [blocktester](https://blocktester.herokuapp.com/) app ([docs](https://trailhead.salesforce.com/fr/content/learn/modules/content-builder-block-sdk/test-and-deploy-a-block?trail_id=develop-for-marketing-cloud)):
