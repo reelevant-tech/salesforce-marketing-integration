@@ -5,8 +5,7 @@ import { BlockWithGroup } from "../features/Block/types"
 const sdk = new BlockSDK(createClient({
   type: ClientType.BLOCKS,
   authenticationType: {
-    grantType: 'refresh_token',
-    refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbklkIjoiNzlkM2U3NGMtODI4Zi00MDU2LThiZWQtMjlmYTgyN2Q4ZGQ1IiwiaXNTdXBlckFkbWluIjpmYWxzZSwiaWF0IjoxNjE1ODg5Njc2LCJzdWIiOiI1ZWQ3Y2RlNGI2OWI2ZDAwMTk4YWRiZjIifQ.kZVdVeITpl06C9cQo84La45zbpaMnLnfEiThQ_kWb4E'
+    type: 'cross_site'
   }
 }))
 

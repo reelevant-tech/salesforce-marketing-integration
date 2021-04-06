@@ -1563,10 +1563,10 @@
   dependencies:
     axios "^0.21.1"
 
-"@rlvt/openapi-client-utils@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@rlvt/openapi-client-utils/-/openapi-client-utils-0.2.1.tgz#277d98fb89722a847e09d03df2233940af5fdbae"
-  integrity sha512-o6qsCzFKK5iExdPB9XEdiIfU/RUk7g85C0e6dALOs23XC4YYKt4qH5NKgF0DsfvY96d4LqeAeRkZaNHEwauBKQ==
+"@rlvt/openapi-client-utils@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@rlvt/openapi-client-utils/-/openapi-client-utils-0.3.0.tgz#ffe066461c0c115152ac06b41cba99dcf1917d17"
+  integrity sha512-nHZCuTCV6MDnJDCyeKDUHDoemi0i7szlYbrzSkrBQzZIIs26WH0M6VExTd1S3yikoDB8Zwx4jL6pQZKzV9drvw==
   dependencies:
     await-of "^3.1.0"
     axios "^0.21.1"
