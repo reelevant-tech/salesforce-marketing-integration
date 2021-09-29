@@ -8,7 +8,7 @@ export function blockToMeta(block: BlockWithGroup): MetaData {
     imageURL: block.urls!.image,
     linkURL: block.urls!.link,
     parameters: block.urls!.params.reduce((acc, current) => {
-      acc[current.key] = (block.parameters && block.parameters[current.key]) ?? ""
+      acc[current.key] = (block.parameters && (block.parameters as Record<string, string>)[current.key]) ?? ""
       return acc
     }, {} as Record<string, string>),
     useLink: true

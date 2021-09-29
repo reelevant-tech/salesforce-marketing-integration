@@ -1556,17 +1556,24 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
-"@rlvt/blocks-openapi-client@^0.0.0-17930e3":
-  version "0.0.0-17930e3"
-  resolved "https://registry.yarnpkg.com/@rlvt/blocks-openapi-client/-/blocks-openapi-client-0.0.0-17930e3.tgz#a23b145a94a345b8fc85a742ba84df4db1181dd6"
-  integrity sha512-S8bNdkELn+UtcFMtJ4A/JCmD2PeO7hSJ+o14MQUMFEFWk2JpyUzGXogS/W1SA4Kp0kw1GYrm38Zll4mFPWdAEA==
+"@rlvt/blocks-openapi-client@^0.0.0-1dcffed":
+  version "0.0.0-1dcffed"
+  resolved "https://registry.yarnpkg.com/@rlvt/blocks-openapi-client/-/blocks-openapi-client-0.0.0-1dcffed.tgz#fb35e13430160bf4cbbe6f9ec83e6f7748f9ed66"
+  integrity sha512-6bxNJVdKPBHWhr7XDMG/4bhdXkZhNMZktqU+t548YR6+G8rm1hKNdS6+cbaiwE43XXzS4hLlI7YSVEnPJJzNgQ==
   dependencies:
     axios "^0.21.1"
 
-"@rlvt/openapi-client-utils@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@rlvt/openapi-client-utils/-/openapi-client-utils-0.3.0.tgz#ffe066461c0c115152ac06b41cba99dcf1917d17"
-  integrity sha512-nHZCuTCV6MDnJDCyeKDUHDoemi0i7szlYbrzSkrBQzZIIs26WH0M6VExTd1S3yikoDB8Zwx4jL6pQZKzV9drvw==
+"@rlvt/entity-manager-openapi-client@^0.0.0-7f8e6d7":
+  version "0.0.0-7f8e6d7"
+  resolved "https://registry.yarnpkg.com/@rlvt/entity-manager-openapi-client/-/entity-manager-openapi-client-0.0.0-7f8e6d7.tgz#3aff2ec893eb77bd2a6256c8dcf66adffa35580a"
+  integrity sha512-keYYBl1xeoYa9NlPnV6uzeEsqBs4WDZsk3CJRh86K+19topE27PtReS7gLKxZjSr2k7expOoqXAoP//zzs+4ug==
+  dependencies:
+    axios "^0.21.1"
+
+"@rlvt/openapi-client-utils@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@rlvt/openapi-client-utils/-/openapi-client-utils-0.4.1.tgz#5f2927308555d1aedb4f60a41120e2bed721bdbb"
+  integrity sha512-XcVvavm5VSaolQIccFKDZcXf6C28iLgqRfLM207SbY1WMxf6VqFsfUbLxRYBp7zEkFuRAgUj6VwetMvBFrtlkg==
   dependencies:
     await-of "^3.1.0"
     axios "^0.21.1"
@@ -1991,6 +1998,11 @@
   dependencies:
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
+
+"@types/js-cookie@^2.2.7":
+  version "2.2.7"
+  resolved "https://registry.yarnpkg.com/@types/js-cookie/-/js-cookie-2.2.7.tgz#226a9e31680835a6188e887f3988e60c04d3f6a3"
+  integrity sha512-aLkWa0C0vO5b4Sr798E26QgOkss68Un0bLjs7u9qxzPT5CG+8DuNTffWES58YzJs3hrVAOs1wonycqEBqNJubA==
 
 "@types/json-schema@*", "@types/json-schema@^7.0.3", "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.6":
   version "7.0.7"
@@ -7505,6 +7517,11 @@ jest@26.6.0:
     "@jest/core" "^26.6.0"
     import-local "^3.0.2"
     jest-cli "^26.6.0"
+
+js-cookie@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-3.0.1.tgz#9e39b4c6c2f56563708d7d31f6f5f21873a92414"
+  integrity sha512-+0rgsUXZu4ncpPxRL+lNEptWMOWl9etvPHc/koSRp6MPwpRYAhmk0dUG00J4bxVV3r9uUzfo24wW0knS07SKSw==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"

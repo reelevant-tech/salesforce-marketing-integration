@@ -10,5 +10,6 @@
     "blockConfig.section.urlParameters": "URL Parameters",
     "blockConfig.error.notEmpty": "could not be empty",
     "blockConfig.section.addLink": "redirect at click",
-    "blockConfig.section.extraParameters": "extra redirect parameters"
+    "blockConfig.section.extraParameters": "extra redirect parameters",
+    "auth.require_authentication": "Please login on the Reelevant app and refresh the page to continue"
 }

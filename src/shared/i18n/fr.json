@@ -7,5 +7,6 @@
     "blockConfig.button.changeBlock": "Changer de bloc",
     "blockList.emptyMessage": "Pas de résultat",
     "blockList.column.blockName": "nom",
-    "blockList.column.campaignName": "groupe"
+    "blockList.column.campaignName": "groupe",
+    "auth.require_authentication": "Veuillez vous connecter sur l'application Reelevant et actualiser la page pour continuer"
 }

@@ -8,6 +8,7 @@ import { getBlockListAsync, getMetaDataAsync } from "../actions"
 import * as selectors from "../selectors"
 import SearchBar from "./SearchBar"
 import ActionTableCell from "./ActionTableCell"
+import { TokenStorage } from "../../../services/tokens"
 
 import standardSprite from "@salesforce-ux/design-system/assets/icons/standard-sprite/svg/symbols.svg"
 
@@ -19,10 +20,19 @@ const BlockListView: React.FC = () => {
   const blockChange = useSelector(selectors.selectBlockChange)
   const dispatch = useDispatch()
 
+
+  const refreshToken = TokenStorage.get('refresh')
+  if (refreshToken === undefined || refreshToken.length === 0) {
+    return (<div className="slds-align_absolute-center" style={{ height: "100%" }}>
+      <FormattedMessage id="auth.require_authentication" />
+    </div>)
+  }
+
   useEffect(() => {
     dispatch(getMetaDataAsync.request())
     dispatch(getBlockListAsync.request({ domain: "block", keyword: "" }))
   }, [dispatch])
+
 
   if (isInit === false) {
     return (

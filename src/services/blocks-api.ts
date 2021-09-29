@@ -1,11 +1,14 @@
 import BlockSDK from "@rlvt/blocks-openapi-client"
 import { createClient, ClientType } from '@rlvt/openapi-client-utils'
 import { BlockWithGroup } from "../features/Block/types"
+import { TokenStorage } from './tokens'
 
 const sdk = new BlockSDK(createClient({
   type: ClientType.BLOCKS,
+  clientId: '',
   authenticationType: {
-    type: 'cross_site'
+    type: 'refresh_token',
+    refreshToken: TokenStorage.get('refresh') as string
   }
 }))
 
