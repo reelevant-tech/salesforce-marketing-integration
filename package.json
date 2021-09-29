@@ -22,7 +22,7 @@
   "dependencies": {
     "@rlvt/blocks-openapi-client": "^0.0.0-1dcffed",
     "@rlvt/entity-manager-openapi-client": "^0.0.0-7f8e6d7",
-    "@rlvt/openapi-client-utils": "^0.4.1",
+    "@rlvt/openapi-client-utils": "^0.4.2",
     "@salesforce-ux/design-system": "2.14.1",
     "@salesforce/design-system-react": "0.10.25",
     "antd": "^4.15.0",
