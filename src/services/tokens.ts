@@ -20,14 +20,14 @@ export const TokenStorage = {
     return Cookies.set(storageKeyByTokenType[type], token, {
       domain: domain.includes("reelevant") ? domain : undefined,
       secure: isSecureCookie,
-      sameSite: 'none' 
+      sameSite: 'none'
     })
   },
   remove: (type: keyof typeof storageKeyByTokenType) => {
     return Cookies.remove(storageKeyByTokenType[type], {
       domain: domain.includes("reelevant") ? domain : undefined,
       secure: isSecureCookie,
-      sameSite: 'none' 
+      sameSite: 'none'
     })
   }
 }

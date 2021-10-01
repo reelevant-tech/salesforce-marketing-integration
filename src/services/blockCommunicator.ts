@@ -12,7 +12,7 @@ enum SUPPORTED_METHODS {
 export default function blockCommunicatorFactory<T>() {
   const blockInstance: BlockSDK<T> = new BlockSDK(
     undefined,
-    [window.location.host, "exacttarget\\.com", "marketingcloudapps\\.com", "blocktester\\.herokuapp\\.com"],
+    [window.location.host, "exacttarget\\.com", "marketingcloudapps\\.com", "blocktester\\.herokuapp\\.com", "sfmc-content\\.com"],
     SSL_OVERRIDE
   )
   return Object.keys(SUPPORTED_METHODS).reduce((acc, method) => {
