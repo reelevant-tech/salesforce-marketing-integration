@@ -19,13 +19,15 @@ export const TokenStorage = {
     // set the cookie to the top level domain so its shared across all apps
     return Cookies.set(storageKeyByTokenType[type], token, {
       domain: domain.includes("reelevant") ? domain : undefined,
-      secure: isSecureCookie
+      secure: isSecureCookie,
+      sameSite: 'none' 
     })
   },
   remove: (type: keyof typeof storageKeyByTokenType) => {
     return Cookies.remove(storageKeyByTokenType[type], {
       domain: domain.includes("reelevant") ? domain : undefined,
-      secure: isSecureCookie
+      secure: isSecureCookie,
+      sameSite: 'none' 
     })
   }
 }
