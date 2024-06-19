@@ -1,14 +1,7 @@
 import React, { PropsWithChildren } from "react"
-import { useDispatch } from "react-redux"
-// @ts-expect-error salesforce doesnt export types
 import { DataTableCell } from "@salesforce/design-system-react"
-import { setMetaDataAsync } from "../actions"
 
-import { blockToMeta } from "../utils"
-import { BlockWithGroup } from "../types"
-
-const ActionTableCell: React.FC<PropsWithChildren<{ item: BlockWithGroup }>> = ({ children, ...props }) => {
-  const dispatch = useDispatch()
+const ActionTableCell: React.FC<PropsWithChildren<{ propertyOnClick: string, item: Record<string, unknown>, onClick: (id: string) => void }>> = ({ children, ...props }) => {
   return (
     <DataTableCell {...props}>
       <span
@@ -16,8 +9,7 @@ const ActionTableCell: React.FC<PropsWithChildren<{ item: BlockWithGroup }>> = (
           cursor: "pointer"
         }}
         onClick={() => {
-          const data = blockToMeta(props.item)
-          dispatch(setMetaDataAsync.request(data))
+          props.onClick(props.item[props.propertyOnClick] as string)
         }}
       >
         {children}

@@ -1,18 +1,18 @@
 import React from "react"
 import { Route, Switch } from "react-router-dom"
-import BlockListView from "../features/Block/components/BlockListView"
-import BlockConfig from "../features/Block/components/BlockConfig"
+import WorkflowList from "../features/Block/components/WorkflowList"
+import WorkflowPage from "../features/Block/components/WorkflowPage"
 
 const routes = [
   {
     key: "1",
     path: ["/"],
-    component: BlockListView
+    component: WorkflowList
   },
   {
     key: "2",
-    path: ["/block/:id"],
-    component: BlockConfig
+    path: ["/workflow/:id"],
+    component: WorkflowPage
   }
 ]
 
