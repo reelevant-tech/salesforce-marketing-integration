@@ -1,5 +1,9 @@
 {
     "blockList.heading": "Published workflows",
+    "auth.heading": "Please connect with your Reelevant account",
+    "auth.username": "Email",
+    "auth.password": "Password",
+    "auth.login": "Login",
     "searchBar.placeholder": "search workflow",
     "blockList.column.publishedAt": "Published at",
     "blockList.column.name": "Name",

@@ -14,7 +14,7 @@ import ActionTableCell from "./ActionTableCell"
 
 import standardSprite from "@salesforce-ux/design-system/assets/icons/standard-sprite/svg/symbols.svg"
 import utilitySprite from "@salesforce-ux/design-system/assets/icons/utility-sprite/svg/symbols.svg"
-import {get} from "../../../services/workflows-api"
+import {workflows} from "../../../services/reelevant"
 import {useAsyncMemo} from "use-async-memo"
 import { blockInstance } from '../../../services/blockCommunicator'
 
@@ -26,9 +26,12 @@ export default function BlockConfig() {
   // get workflow + SF data
   const blockData = useAsyncMemo(() => new Promise<Parameters<typeof blockInstance['setData']>[0]>(resolve => blockInstance.getData(data => resolve(data))), [])
   const workflow = useAsyncMemo(async () => {
-    return await get(workflowId)
+    const workflow = await workflows.Workflow.get({ id: workflowId })
+    return workflow.data.data
   }, [workflowId])
   const [selectedZone, setSelectedZone] = useState<number>()
+
+  console.log(workflow)
 
   useEffect(() => {
     if (typeof blockData === 'undefined') return

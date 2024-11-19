@@ -4,27 +4,26 @@ import { Spinner, Card, IconSettings, DataTableColumn, DataTable } from "@salesf
 import { FormattedMessage } from "react-intl"
 import SearchBar from "./SearchBar"
 import ActionTableCell from "./ActionTableCell"
-import { TokenStorage } from "../../../services/tokens"
-import { list } from "../../../services/workflows-api"
+import { storeOrRefresh, workflows } from "../../../services/reelevant"
 import { useAsyncMemo } from "use-async-memo"
 
 import standardSprite from "@salesforce-ux/design-system/assets/icons/standard-sprite/svg/symbols.svg"
+import {WorkflowStatus} from "@rlvt/workflows-openapi-client"
 
 const dataFormat = new Intl.DateTimeFormat('fr-FR', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' })
 
 const BlockListView: React.FC = () => {
-  const refreshToken = TokenStorage.get('refresh')
-  if (refreshToken === undefined || refreshToken.length === 0) {
-    return (<div className="slds-align_absolute-center" style={{ height: "100%" }}>
-      <FormattedMessage id="auth.require_authentication" />
-    </div>)
-  }
   const [search, setSearch] = useState<string>()
   const [selectedWorkflowId, setSelectedWorkflowId] = useState<string>()
 
-  const workflows = useAsyncMemo(async () => {
-    const workflows =  await list({ search })
-    return workflows.map(workflow => Object.assign(workflow, { updatedAt: dataFormat.format(new Date(workflow.updatedAt)) }))
+  const workflowList = useAsyncMemo(async () => {
+    const res = await workflows.Workflow.list({
+      status: [WorkflowStatus.PUBLISHED],
+      page: 1,
+      perPage: 15,
+      name: search !== undefined && search.trim().length > 0 ? search : undefined
+    })
+    return res.data.data?.map(workflow => Object.assign(workflow, { updatedAt: dataFormat.format(new Date(workflow.updatedAt)) }))
   }, [search])
 
   if (typeof workflows === 'undefined') {
@@ -48,7 +47,7 @@ const BlockListView: React.FC = () => {
           }}
         />
         <div style={{ overflow: "auto" }}>
-          <DataTable items={workflows} id="listPage" fixedLayout>
+          <DataTable items={workflowList ?? []} id="listPage" fixedLayout>
             <DataTableColumn
               width="50%"
               truncate
@@ -68,7 +67,7 @@ const BlockListView: React.FC = () => {
             />
           </DataTable>
           <div style={{ textAlign: "center" }}>
-            {typeof workflows !== 'undefined' && workflows.length === 0 ? (
+            {typeof workflowList !== 'undefined' && workflowList.length === 0 ? (
               <h3>
                 <FormattedMessage id="blockList.emptyMessage" />
               </h3>
