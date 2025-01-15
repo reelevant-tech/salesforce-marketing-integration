@@ -21,6 +21,7 @@ const BlockListView: React.FC = () => {
       status: [WorkflowStatus.PUBLISHED],
       page: 1,
       perPage: 15,
+      entrypointTypes: ['email'],
       name: search !== undefined && search.trim().length > 0 ? search : undefined
     })
     return res.data.data?.map(workflow => Object.assign(workflow, { updatedAt: dataFormat.format(new Date(workflow.updatedAt)) }))

@@ -31,7 +31,7 @@ export default function BlockConfig() {
   }, [workflowId])
   const [selectedZone, setSelectedZone] = useState<number>()
 
-  console.log(workflow)
+  console.log(workflow, workflowId)
 
   useEffect(() => {
     if (typeof blockData === 'undefined') return
@@ -42,12 +42,11 @@ export default function BlockConfig() {
   // compute all available zones and if they are already selected
   const zones = useMemo(() => {
     if (typeof workflow === 'undefined') return []
-    return workflow.urls?.map((url, idx) => {
-      const { type } = Object.values(workflow.versions[0].definition.entrypoints)[idx]
+    return workflow.integrations?.map((integration, idx) => {
       return {
         id: idx.toString(),
         selected: selectedZone === idx ? 'yes' : 'no',
-        type: intl.formatMessage({ id: `workflowPage.zone.description.type.${type}` }),
+        type: intl.formatMessage({ id: `workflowPage.zone.description.type.${integration.type}` }),
         name: intl.formatMessage({ id: 'workflowPage.zone.description' }, { index: idx + 1 })
       }
     }) ?? []
@@ -92,7 +91,7 @@ export default function BlockConfig() {
                 const zoneIndex = parseInt(id)
                 setSelectedZone(zoneIndex)
                 blockInstance.setData({ workflow: workflowId, entrypointIndex: zoneIndex }, () => {})
-                blockInstance.setContent(`<a href="${workflow.urls![zoneIndex].click}"><img src=${workflow.urls![zoneIndex].display}></a>`, () => {})
+                blockInstance.setContent(`<a href="${workflow.integrations![zoneIndex].click}"><img src=${workflow.integrations![zoneIndex].display}></a>`, () => {})
               }}/>
             </DataTableColumn>
             <DataTableColumn

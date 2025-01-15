@@ -1749,10 +1749,10 @@
     await-of "^3.1.1"
     axios "^1.2.1"
 
-"@rlvt/workflows-openapi-client@1.0.543":
-  version "1.0.543"
-  resolved "https://registry.yarnpkg.com/@rlvt/workflows-openapi-client/-/workflows-openapi-client-1.0.543.tgz#da9a1a953cf5329e8fb13ed0741a459769bb7447"
-  integrity sha512-+AiP/4rfYNPaemIzmJf/FnrE6Bs1Hs4FteFRPsqufhtEkeygzP8Ge5asQUBc7woys+LCz7FfuRgdKvLSuoja2w==
+"@rlvt/workflows-openapi-client@1.0.592":
+  version "1.0.592"
+  resolved "https://registry.yarnpkg.com/@rlvt/workflows-openapi-client/-/workflows-openapi-client-1.0.592.tgz#99a8aaba27f9cd026eb1f7d9b85d73d287c35a5d"
+  integrity sha512-NtWJB0zDqC9GWTk6h0pOWkvhdEXaAwIMnX1GYosEBilo3ytupHJslEagULFsb34ayuNFKkeI3JDlhVik5KPCag==
 
 "@rollup/plugin-node-resolve@^7.1.1":
   version "7.1.3"
